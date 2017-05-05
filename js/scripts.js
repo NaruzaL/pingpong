@@ -1,34 +1,53 @@
-//backend logic
+//backend logic------------------------------------------
 
-//countingArray will count from 1 to the number selected by the user and fill the array with those numbers.
-var countingArray =
-  for (var i = 1; i < number; i++){
-    countingArray.push(i);
+//pingpong will take the users number and create an array that starts at 1 and fill in up to the users number. Then it sends the array through the filter function to replace 3's, 5's and 15's with the corrisponding words and finally returns them in another empty array.
+debugger;
+var displayArray = [];
+var numberArray = [];
+var pingpong = function(numbers, i){
+  for (var i = 1; i <= numbers; i++){
+  numberArray.push(i);
+  console.log(numberArray);
+  filter(numberArray[i]);
+  displayArray.push(result);
   }
-
-// catch3 will be used to scan each i in the countingArray and see if it's exactly divisable by three. catch5 will do the same for 5's, catch15 for 15's.
-function catch3(countingArray, i){
-  var temp = (array[i] % 3)
-  return temp;
-}
-function catch5(countingArray, i){
-  var temp = (array[i] % 5)
-  return temp;
-}
-function catch15(countingArray, i){
-  var temp = (array[i] % 15)
-  return temp;
+  return displayArray;
 }
 
+var filter = function(numberArray){
+  var result = []
+  for (i = 1; i < numberArray.length; i++){
+  if (filter3(numberArray) === 0 && filter5 === 0){
+    numberArray.slice(numberArray[i]);
+    numberArray.push("ping-pong");
+  }
+    else if (filter3(numberArray) === 0){
+      numberArray.slice(numberArray[i]);
+      numberArray.push("ping");
+    }
+    else if (filter5(numberArray) === 0){
+      numberArray.slice(numberArray[i]);
+      filteredArray.push("pong");
+    }
+  }
+  return result;
+}
 
-
-
-
-//UI logic
+var filter3 = function (numberArray, i){
+  var check = (numberArray[i] % 3);
+}
+var filter5 = function (numberArray, i){
+  var check = (numberArray[i] % 5);
+}
+//UI logic--------------------------------------------------
 
 $(document).ready(function(){
   $("#mainform").submit(function(event){
-  var number = parseInt($("input#number").val());
-event.preventDefault();
+  var numbers = parseInt($("input#number").val());
+  var result = pingpong(numbers);
+  for (i = 0; i <= displayArray.length; i++){
+  $("#output").append("<li>" + displayArray[i] + " </li>");
+  }
+  event.preventDefault();
   });
 });
