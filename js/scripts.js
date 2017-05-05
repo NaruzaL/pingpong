@@ -20,11 +20,11 @@ var pingpong = function(numbers, i){
     else if (filter5(numberArray, i) === 0){
       filteredArray.push("pong");
     }
-    else {
-    filteredArray.push(i);
-    }
+      else {
+      filteredArray.push(numberArray[i]);
+      }
   }
-  return numberArray;
+  return filteredArray;
 }
 
 function filter3 (numberArray, i){
