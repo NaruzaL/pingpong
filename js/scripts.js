@@ -1,6 +1,6 @@
 //backend logic------------------------------------------
 
-//pingpong will take the users number and create an array that starts at 1 and fill in up to the users number. Then it sends the created array through the filter functions to replace 3's, 5's and 15's with the corrisponding words and finally returns them in another empty array.
+//pingpong will take the users number and create an array that starts at 1 and fill in up to the users number. Then it sends the created array through a for loop of if else statements to replace 3's, 5's and 15's with the corrisponding words and finally returns them in another empty array.
 var filteredArray = [];
 
 var pingpong = function(numbers){
