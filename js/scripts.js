@@ -14,7 +14,7 @@ var pingpong = function(numbers){
   }
     else if (i % 3 === 0){
       filteredArray.push("ping");
-    } 
+    }
     else if (i % 5 === 0){
       filteredArray.push("pong");
     }
@@ -29,12 +29,12 @@ var pingpong = function(numbers){
 
 $(document).ready(function(){
   $("#mainform").submit(function(event){
-  event.preventDefault();
-  var numbers = parseInt($("input#number").val());
-  pingpong(numbers);
-  $("#output").empty();
-  filteredArray.forEach(function(i){
-  $("#output").append("<li>" + i + " </li>");
-  });
+    event.preventDefault();
+    var numbers = parseInt($("input#number").val());
+    pingpong(numbers);
+    $("#output").empty();
+    filteredArray.forEach(function(i){
+    $("#output").append("<li>" + i + " </li>");
+    });
   });
 });
